@@ -37,4 +37,29 @@ class Reservation:
         if payment_mode not in self.AUTHORIZED_PAYMENT_MODES:
             raise ValueError(f"Invalid payment mode. Choose from: {self.AUTHORIZED_PAYMENT_MODES}")
         self.__payment_mode = payment_mode
+        # Automatic price calculation (POLYMORPHISM)
+        self.__total_price = self._calculate_price()
+        self.__status = "Confirmed"
+
+    def _calculate_price(self) -> float:
+        """Calculates total price by delegating to the accommodation's polymorphic method."""
+        return self.__logement.calculate_price(self.__nights)
+
+    def cancel(self) -> bool:
+        """Cancels the reservation if allowed (idempotent operation)."""
+        if self.__status == "Cancelled":
+            print("⚠️ This reservation is already cancelled.")
+            return False
+        self.__status = "Cancelled"
+        print(f"✅ Reservation {self.__id} successfully cancelled.")
+        return True
+
+    def update_payment_mode(self, new_mode: str) -> bool:
+        """Updates the payment mode after creation."""
+        if new_mode not in self.AUTHORIZED_PAYMENT_MODES:
+            print(f"⚠️ Invalid mode. Options: {self.AUTHORIZED_PAYMENT_MODES}")
+            return False
+        self.__payment_mode = new_mode
+        print(f"✅ Payment mode updated to: {new_mode}")
+        return True
 
