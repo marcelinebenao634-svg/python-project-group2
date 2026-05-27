@@ -9,11 +9,17 @@ p = Person(name, firstname, contact)
 print(p.display())
 
 t = Tourist(name, firstname, contact)
-preference = input("Enter your preferences (separated by comma): ")
-preferences_list = preference.split(" , ")
-for pref in preferences_list:
-  t.add_preference(pref.strip())
+preference = input("Enter your preference: ")
+t.add_preference(preference)
+
+while True:
+  choice = input("Do you want to add more preferences? (yes/no:) ")
+  if choice =="no"
+    break
+  preference = input("Enter  your preference: ")
+  t.add_preference(preference)
 print(t.display())
+print(t.get_preferences())
 
 post = input("Enter your post: ")
 salary = input("Enter your salary: ")
@@ -25,10 +31,12 @@ localisation = input("Enter the localisation : ")
 cost = input("Enter the cost : ")
 stars = input("Enter the number of stars : ")
 services = input("Enter the services : ")
+services_list = []
+for service in services.split(","):
+  services_list.append(service.strip())
 cost = int(cost)
 stars = int(stars)
-services = services.split(",")
-h = Hotel(name, localisation, cost, stars, services)
+h = Hotel(name, localisation, cost, stars, services_list)
 h.display()
 
 name = input("Enter auberge's name : ")
