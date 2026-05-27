@@ -1,6 +1,5 @@
-from person import Person
-from person import Tourist
-from person import Employee
+from person import Person, Tourist, Employee
+from logement import Logement, Hotel, Auberge
 
 name = input("Enter your name :")
 firstname = input("Enter your firstname : ")
