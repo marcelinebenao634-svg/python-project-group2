@@ -1,6 +1,6 @@
-
-
 class Personne:
+    
+
     def __init__(self, nom, prenom, contact):
         self.__nom = nom
         self.__prenom = prenom
@@ -16,10 +16,12 @@ class Personne:
         return self.__contact
 
     def afficher(self):
-        return f"{self.__prenom} {self.__nom} - {self.__contact}"
+        return f"{self.__prenom} {self.__nom} | Contact: {self.__contact}"
 
 
 class Touriste(Personne):
+    
+
     def __init__(self, nom, prenom, contact, preferences=None):
         super().__init__(nom, prenom, contact)
         self.__preferences = preferences if preferences is not None else []
@@ -39,10 +41,12 @@ class Touriste(Personne):
 
     def afficher(self):
         prefs = ", ".join(self.__preferences) if self.__preferences else "Aucune"
-        return f"Touriste: {super().afficher()} | Preferences: {prefs}"
+        return f"Touriste: {super().afficher()} | Préférences: {prefs}"
 
 
 class Employe(Personne):
+    """Représente un employé du système AfriTour."""
+
     def __init__(self, nom, prenom, contact, poste, salaire):
         super().__init__(nom, prenom, contact)
         self.__poste = poste
