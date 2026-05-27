@@ -15,7 +15,7 @@ class Logement:
     def get_cost(self):
         return self.__cost
 
-    def afficher(self):
+    def display(self):
         print(f"Logement: {self.__name}")
         print(f"Localisation: {self.__localisation}")
         print(f"Cost: {self.__cost} FCFA")
@@ -32,15 +32,15 @@ class Hotel(Logement):
     def get_stars(self):
         return self.__stars
 
-    def calculer_prix(self):
+    def calculate_price(self):
         return self.get_cost() * 1.05
 
-    def afficher(self):
+    def display(self):
         print("Hotel Information:")
-        super().afficher()
+        super().display()
         print(f"Stars: {self.__stars} stars")
         print(f"Services: {', '.join(self.__services)}")
-        print(f"cost with taxe 5%: {self.calculer_prix()} FCFA")
+        print(f"cost with taxe 5%: {self.calculate_price()} FCFA")
 
 
 class Auberge(Logement):
@@ -53,14 +53,14 @@ class Auberge(Logement):
     def get_type_dormitory(self):
         return self.__type_dormitory
 
-    def calculer_prix(self):
+    def calculate_price(self):
         return self.get_cost() * 0.90
 
-    def afficher(self):
+    def display(self):
         print("\nAuberge Information:")
-        super().afficher()
+        super().display()
         print(f"Type of Dormitory: {self.__type_dormitory}")
-        print(f"cost with discount 10%: {self.calculer_prix()} FCFA")
+        print(f"cost with discount 10%: {self.calculate_price()} FCFA")
 
 
 if __name__ == "__main__":
@@ -88,50 +88,50 @@ if __name__ == "__main__":
     hotel18 = Hotel("Hotel du kaziende", "Kaya", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
     hotel19 = Hotel("pacific hotel kaya", "Kaya", 40000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
     hotel20 = Hotel("Hotel la grace divine", "Kaya", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-    hotel1.afficher()
+    hotel1.display()
     print("\n")
-    auberge1.afficher()
+    auberge1.display()
     print("\n")
-    hotel2.afficher()
+    hotel2.display()
     print("\n")
-    auberge2.afficher()
+    auberge2.display()
     print("\n")
-    hotel3.afficher()
+    hotel3.display()
     print("\n")
-    auberge3.afficher()
+    auberge3.display()
     print("\n")
-    hotel4.afficher()
+    hotel4.display()
     print("\n")
-    auberge4.afficher()
+    auberge4.display()
     print("\n")
-    hotel5.afficher()
+    hotel5.display()
     print("\n")
-    hotel6.afficher()
+    hotel6.display()
     print("\n")
-    hotel7.afficher()
+    hotel7.display()
     print("\n")
-    hotel8.afficher()
+    hotel8.display()
     print("\n")
-    hotel9.afficher()
+    hotel9.display()
     print("\n")
-    hotel10.afficher()
+    hotel10.display()
     print("\n")
-    hotel11.afficher()
+    hotel11.display()
     print("\n")
-    hotel12.afficher()
+    hotel12.display()
     print("\n")
-    hotel13.afficher()
+    hotel13.display()
     print("\n")
-    hotel14.afficher()
+    hotel14.display()
     print("\n")
-    hotel15.afficher()
+    hotel15.display()
     print("\n")
-    hotel16.afficher()
+    hotel16.display()
     print("\n")
-    hotel17.afficher()
+    hotel17.display()
     print("\n")
-    hotel18.afficher()
+    hotel18.display()
     print("\n")
-    hotel19.afficher()
+    hotel19.display()
     print("\n")
-    hotel20.afficher()
+    hotel20.display()
