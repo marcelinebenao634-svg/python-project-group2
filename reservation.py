@@ -54,12 +54,4 @@ class Reservation:
         print(f"✅ Reservation {self.__id} successfully cancelled.")
         return True
 
-    def update_payment_mode(self, new_mode: str) -> bool:
-        """Updates the payment mode after creation."""
-        if new_mode not in self.AUTHORIZED_PAYMENT_MODES:
-            print(f"⚠️ Invalid mode. Options: {self.AUTHORIZED_PAYMENT_MODES}")
-            return False
-        self.__payment_mode = new_mode
-        print(f"✅ Payment mode updated to: {new_mode}")
-        return True
-
+    
