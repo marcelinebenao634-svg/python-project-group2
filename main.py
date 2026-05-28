@@ -34,18 +34,18 @@ print("2. Auberge")
 type_choice = input("Enter your choice (1 or 2): ")
 if type_choix == "1":
   print("Available hotels: ")
-  for i, hotel in enumerate(hotels, 1):
-    print(f"{i}. {hotel.get_name()} - {hotel.get_localisation()} - {hotel.get_cost() FCFA ")}
+  for i, hotel in enumerate(Hotel, 1):
+    print(f"{i}. {Hotel.get_name()} - {Hotel.get_localisation()} - {Hotel.get_cost()} FCFA ")
   choice = int(input("Enter number: ")) - 1
-  h = hotels[choice]
+  h = Hotel[choice]
   h.display()
 
   elif type_choix == "2":
   print("\nAvailable auberges: ")
-  for i, hotel in enumerate(auberges, 1):
-    print(f"{i}. {auberge.get_name()} - {auberge.get_localisation()} - {auberge.get_cost() FCFA ")}
+  for i, hotel in enumerate(Auberge, 1):
+    print(f"{i}. {Auberge.get_name()} - {Auberge.get_localisation()} - {Auberge.get_cost()} FCFA ")
   choice = int(input("Enter number: ")) - 1
-  a = auberges[choice]
+  a = Auberge[choice]
   a.display()        
 
 
