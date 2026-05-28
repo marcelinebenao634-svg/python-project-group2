@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 from person import Person, Tourist, Employee
 from logement import Logement, Hotel, Auberge
 
@@ -47,7 +46,6 @@ type_dormitory = input("Enter the type of dormitory : ")
 cost = int(cost)
 a = Auberge(name, localisation, cost, type_dormitory)
 a.display()
-=======
 from logement import Hotel, Auberge
 hotel1 = Hotel("Hotel Splendide", "OUAGADOUGOU", 50000, 4, ["Wi-Fi", "Piscine"])
 auberge1 = Auberge("Auberge Bilimpo", "Fada N'Gourma", 20000, "Mixed Dormitory")
@@ -122,4 +120,3 @@ print("\n")
 hotel19.display()
 print("\n")
 hotel20.display()
->>>>>>> Stashed changes
