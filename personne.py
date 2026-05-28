@@ -1,62 +1,60 @@
-class Personne:
-    
+class Person:
 
-    def __init__(self, nom, prenom, contact):
-        self.__nom = nom
-        self.__prenom = prenom
+    def __init__(self, last_name, first_name, contact):
+        self.__last_name = last_name
+        self.__first_name = first_name
         self.__contact = contact
 
-    def get_nom(self):
-        return self.__nom
+    def get_last_name(self):
+        return self.__last_name
 
-    def get_prenom(self):
-        return self.__prenom
+    def get_first_name(self):
+        return self.__first_name
 
     def get_contact(self):
         return self.__contact
 
-    def afficher(self):
-        return f"{self.__prenom} {self.__nom} | Contact: {self.__contact}"
+    def display(self):
+        return f"{self.__first_name} {self.__last_name} | Contact: {self.__contact}"
 
 
-class Touriste(Personne):
-    
+class Tourist(Person):
 
-    def __init__(self, nom, prenom, contact, preferences=None):
-        super().__init__(nom, prenom, contact)
+    def __init__(self, last_name, first_name, contact, preferences=None):
+        super().__init__(last_name, first_name, contact)
         self.__preferences = preferences if preferences is not None else []
-        self.__historique = []
+        self.__history = []
 
-    def ajouter_preference(self, preference):
+    def add_preference(self, preference):
         self.__preferences.append(preference)
 
     def get_preferences(self):
         return tuple(self.__preferences)
 
-    def ajouter_historique(self, reservation_id):
-        self.__historique.append(reservation_id)
+    def add_history(self, reservation_id):
+        self.__history.append(reservation_id)
 
-    def get_historique(self):
-        return list(self.__historique)
+    def get_history(self):
+        return list(self.__history)
 
-    def afficher(self):
-        prefs = ", ".join(self.__preferences) if self.__preferences else "Aucune"
-        return f"Touriste: {super().afficher()} | Préférences: {prefs}"
+    def display(self):
+        prefs = ", ".join(self.__preferences) if self.__preferences else "None"
+        return f"Tourist: {super().display()} | Preferences: {prefs}"
 
 
-class Employe(Personne):
-    """Représente un employé du système AfriTour."""
+class Employee(Person):
+    """Represents an employee of the AfriTour system."""
 
-    def __init__(self, nom, prenom, contact, poste, salaire):
-        super().__init__(nom, prenom, contact)
-        self.__poste = poste
-        self.__salaire = salaire
+    def __init__(self, last_name, first_name, contact, position, salary):
+        super().__init__(last_name, first_name, contact)
+        self.__position = position
+        self.__salary = salary
 
-    def get_poste(self):
-        return self.__poste
+    def get_position(self):
+        return self.__position
 
-    def get_salaire(self):
-        return self.__salaire
+    def get_salary(self):
+        return self.__salary
 
-    def afficher(self):
-        return f"Employe: {super().afficher()} | Poste: {self.__poste} | Salaire: {self.__salaire}"
+    def display(self):
+        return f"Employee: {super().display()} | Position: {self.__position} | Salary: {self.__salary}"
