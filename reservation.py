@@ -88,6 +88,35 @@ class Reservation:
     def __repr__(self) -> str:
         return f"Reservation(id={self.__id}, status={self.__status})"
 
+# ───────── SERIALIZATION (Dict for file I/O) ─────────
+    def to_dict(self) -> dict:
+        """Exports reservation data to a dictionary for file saving."""
+        return {
+            "id": self.__id,
+            "tourist_nom": self.__touriste.get_nom(),
+            "tourist_prenom": self.__touriste.get_prenom(),
+            "logement_nom": self.__logement.get_nom(),
+            "arrival_date": self.__dates[0],
+            "departure_date": self.__dates[1],
+            "total_price": self.__total_price,
+            "status": self.__status,
+            "payment_mode": self.__payment_mode
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict, touriste, logement) -> "Reservation":
+        """Reconstructs a Reservation from a dictionary (file loading)."""
+        mode = data.get("payment_mode", "Mobile Money")
+        res = cls(touriste, logement, data["arrival_date"], data["departure_date"], mode)
+        res.__id = data["id"]
+        res.__status = data["status"]
+        # Sync counter to avoid ID duplication
+        num = int(data["id"].split("-")[1])
+        if num >= cls._id_counter:
+            cls._id_counter = num + 1
+        return res
+    
+
 
 
 
