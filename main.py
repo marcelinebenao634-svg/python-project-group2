@@ -1,6 +1,7 @@
-from person import Person, Tourist, Employee
-from logement import Logement, Hotel, Auberge
-from touristSite import TouristSite, search_site, site_list
+from Person import Person Tourist, Employee
+from Logement import Hotel, Auberge,hotels, auberges
+from TouristSite import search_site, site_list
+from reservation import
 
 name = input("Enter your name :")
 firstname = input("Enter your firstname : ")
@@ -27,49 +28,26 @@ salary = input("Enter your salary: ")
 e = Employee(name, firstname, contact, post, salary)
 print(e.display())
 
-
+# Afficher le type de logement
 print("what type of accomodation do you want?")
 print("1. Hotel")
 print("2. Auberge")
 type_choice = input("Enter your choice (1 or 2): ")
 if type_choix == "1":
   print("Available hotels: ")
-  for i, hotel in enumerate(hotels, 1):
-    print(f"{i}. {hotel.get_name()} - {hotel.get_localisation()} - {hotel.get_cost() FCFA ")}
+  for i, hotel in enumerate(Hotel, 1):
+    print(f"{i}. {Hotel.get_name()} - {Hotel.get_localisation()} - {Hotel.get_cost()} FCFA ")
   choice = int(input("Enter number: ")) - 1
-  h = hotels[choice]
+  h = Hotel[choice]
   h.display()
 
-  elif type_choix == "2":
+elif type_choix == "2":
   print("\nAvailable auberges: ")
-  for i, hotel in enumerate(auberges, 1):
-    print(f"{i}. {auberge.get_name()} - {auberge.get_localisation()} - {auberge.get_cost() FCFA ")}
+  for i, hotel in enumerate(Auberge, 1):
+    print(f"{i}. {Auberge.get_name()} - {Auberge.get_localisation()} - {Auberge.get_cost()} FCFA ")
   choice = int(input("Enter number: ")) - 1
-  a = auberges[choice]
-  a.display()        
+  a = Auberge[choice]
+  a.display()
 
 
-while True:
-    print("\n=== Tourist Sites of Burkina Faso ===")
-    print("1. Search for a site")
-    print("2. Display all sites")
-    print("3. Quit")
 
-    choice = input("Your choice: ")
-
-    if choice == "1":
-        name = input("Enter the name of the site to search: ")
-        results = search_site(site_list, name)
-        if results:
-            for site in results:
-                site.display_info()
-        else:
-            print("No site found.")
-
-    elif choice == "2":
-        for site in site_list:
-            site.display_info()
-
-    elif choice == "3":
-      break
-        print("Goodbye!")
