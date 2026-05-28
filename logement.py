@@ -61,7 +61,7 @@ class Auberge(Logement):
         super().display()
         print(f"Type of Dormitory: {self.__type_dormitory}")
         print(f"cost with discount 10%: {self.calculate_price()}FCFA")
-<<<<<<< HEAD
+
 
 if __name__ == "__main__":
         hotel1 = Hotel("Hotel Splendide", "OUAGADOUGOU", 50000, 4, ["Wi-Fi", "Piscine"])
@@ -92,39 +92,6 @@ hotels = [hotel1, hotel2, hotel3, hotel4, hotel5, hotel6, hotel7, hotel8, hotel9
 auberges = [auberge1, auberge2, auberge3, auberge4]        
 hotel1.display()
 print("\n")
-auberge1.display()
-print("\n")
-hotel2.display()
-print("\n")
-auberge2.display()
-=======
-    from logement import Hotel, Auberge
-hotel1 = Hotel("Hotel Splendide", "OUAGADOUGOU", 50000, 4, ["Wi-Fi", "Piscine"])
-auberge1 = Auberge("Auberge Bilimpo", "Fada N'Gourma", 20000, "Mixed Dormitory")
-hotel2 = Hotel("Hotel de la Paix", "Lagos", 30000, 3, ["Wi-Fi", "Restaurant"])
-auberge2 = Auberge("Auberge du 11 Decembre", "Fada N'Gourma", 15000, "Female Dormitory")
-hotel3 = Hotel("Laico hotel", "OUAGADOUGOU", 40000, 5, ["Wi-Fi", "Piscine", "Spa"])
-auberge3 = Auberge("Auberge song taaba", "OUAGADOUGOU", 25000, "Male Dormitory")
-hotel4 = Hotel("Hotel silmende", "OUAGADOUGOU", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-auberge4 = Auberge("Auberge du LA VIDA LOCA", "OUAGADOUGOU", 18000, "Female Dormitory")
-hotel5 = Hotel("Bravia Hotel", "OUAGADOUGOU", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel6 = Hotel("Lancaster ouaga 2000", "OUAGADOUGOU", 55000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel7 = Hotel("Hotel kavana", "OUAGADOUGOU", 40000, 4, ["Wi-Fi", "Piscine"])
-hotel8 = Hotel("Bravia Hotel", "OUAGADOUGOU", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel9 = Hotel("hotel sissiman", "Bobo-Dioulasso", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel10 = Hotel("villa Bobo", "Bobo-Dioulasso", 30000, 3, ["Wi-Fi", "Piscine"])
-hotel11 = Hotel("pacific hotel", "Bobo-Dioulasso", 40000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel12 = Hotel("cascades Palace", "Banfora", 45000, 3, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel13 = Hotel("Hotel canne a sucre", "Banfora ", 30000, 3, ["Wi-Fi", "Piscine"])
-hotel14 = Hotel("Hotel du lac", "Banfora", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel15 = Hotel("campement touristique", "Dedougou", 25000, 2, ["Wi-Fi"])
-hotel16 = Hotel("Hotel Tieba", "Tenkodogo", 20000, 2, ["Wi-Fi"])
-hotel17 = Hotel("Hotel djamou", "Tenkodogo", 30000, 3, ["Wi-Fi", "Piscine"])
-hotel18 = Hotel("Hotel du kaziende", "Kaya", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel19 = Hotel("pacific hotel kaya", "Kaya", 40000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel20 = Hotel("Hotel la grace divine", "Kaya", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel1.display()
-print("\n")
 hotel2.display()
 print("\n")
 hotel3.display()
@@ -132,7 +99,6 @@ print("\n")
 hotel4.display()
 print("\n")
 hotel5.display()
->>>>>>> 36c45fc62c0df663c693999343f5ce68a9caeea9
 print("\n")
 hotel3.display()
 print("\n")
@@ -173,7 +139,3 @@ print("\n")
 hotel19.display()
 print("\n")
 hotel20.display()
-<<<<<<< HEAD
-    
-=======
->>>>>>> 36c45fc62c0df663c693999343f5ce68a9caeea9
