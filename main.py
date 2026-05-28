@@ -1,7 +1,7 @@
 from person import Person, Tourist, Employee
 from logement import Hotel, Auberge,hotels, auberges
 from touristSite import TouristSite, search_site, site_list, User, Reservation, register, make_reservation
-from reservation import
+from reservation import Reservation
 
 name = input("Enter your name :")
 firstname = input("Enter your firstname : ")
@@ -50,4 +50,16 @@ elif type_choix == "2":
   a.display()
 
 
+# Saisie des dates
+arrival_date = input("Enter arrival date (YYYY-MM-DD): ")
+departure_date = input("Enter departure date (YYYY-MM-DD): ")
 
+# Mode de paiement
+print("Payment modes: Cash, Credit Card, Mobile Money, Bank Transfer")
+payment_mode = input("Enter payment mode: ")
+
+# Créer la réservation
+r = Reservation(t, h, arrival_date, departure_date, payment_mode)
+
+# Afficher
+print(r.display())
