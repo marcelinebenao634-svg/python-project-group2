@@ -1,5 +1,5 @@
 from person import Person, Tourist, Employee
-from touristSite import TouristSite, search_site, site_list, User, register
+from TouristSite import touristSit, search_site, site_list, User, register
 from reservation import Reservation
 from logement import Hotel, Auberge,hotels, auberges
 
