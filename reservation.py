@@ -61,6 +61,16 @@ class Reservation:
         self.__payment_mode = new_mode
         print(f"✅ Payment mode updated to: {new_mode}")
         return True
+        # ───────GETTERS (Encapsulation) ─────────
+    def get_id(self) -> str: return self.__id
+    def get_touriste(self): return self.__touriste
+    def get_logement(self): return self.__logement
+    def get_dates(self) -> tuple: return self.__dates
+    def get_nights(self) -> int: return self.__nights
+    def get_total_price(self) -> float: return self.__total_price
+    def get_status(self) -> str: return self.__status
+    def get_payment_mode(self) -> str: return self.__payment_mode
+
 
 
 
