@@ -1,7 +1,7 @@
 from person import Person, Tourist, Employee
-from logement import Hotel, Auberge,hotels, auberges
 from touristSite import TouristSite, search_site, site_list, User, register
 from reservation import Reservation
+from logement import Hotel, Auberge,hotels, auberges
 
 name = input("Enter your name :")
 firstname = input("Enter your firstname : ")
@@ -28,28 +28,6 @@ salary = input("Enter your salary: ")
 e = Employee(name, firstname, contact, post, salary)
 print(e.display())
 
-# Afficher le type de logement
-print("what type of accomodation do you want?")
-print("1. Hotel")
-print("2. Auberge")
-type_choice = input("Enter your choice (1 or 2): ")
-if type_choix == "1":
-  print("Available hotels: ")
-  for i, hotel in enumerate(Hotel, 1):
-    print(f"{i}. {Hotel.get_name()} - {Hotel.get_localisation()} - {Hotel.get_cost()} FCFA ")
-  choice = int(input("Enter number: ")) - 1
-  h = Hotel[choice]
-  h.display()
-
-elif type_choix == "2":
-  print("\nAvailable auberges: ")
-  for i, hotel in enumerate(Auberge, 1):
-    print(f"{i}. {Auberge.get_name()} - {Auberge.get_localisation()} - {Auberge.get_cost()} FCFA ")
-  choice = int(input("Enter number: ")) - 1
-  a = Auberge[choice]
-  a.display()
-
-
 # display of dates
 arrival_date = input("Enter arrival date (YYYY-MM-DD): ")
 departure_date = input("Enter departure date (YYYY-MM-DD): ")
@@ -73,3 +51,27 @@ print(r.display())
 cancel = input("Do you want to cancel? (yes/no): ")
 if = cancel =="yes"
 r.cancel
+
+
+# Afficher le type de logement
+print("what type of accomodation do you want?")
+print("1. Hotel")
+print("2. Auberge")
+type_choice = input("Enter your choice (1 or 2): ")
+if type_choix == "1":
+  print("Available hotels: ")
+  for i, hotel in enumerate(Hotel, 1):
+    print(f"{i}. {Hotel.get_name()} - {Hotel.get_localisation()} - {Hotel.get_cost()} FCFA ")
+  choice = int(input("Enter number: ")) - 1
+  h = Hotel[choice]
+  h.display()
+
+elif type_choix == "2":
+  print("\nAvailable auberges: ")
+  for i, hotel in enumerate(Auberge, 1):
+    print(f"{i}. {Auberge.get_name()} - {Auberge.get_localisation()} - {Auberge.get_cost()} FCFA ")
+  choice = int(input("Enter number: ")) - 1
+  a = Auberge[choice]
+  a.display()
+
+
