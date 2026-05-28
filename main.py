@@ -23,9 +23,9 @@ while True:
 print(t.display())
 print(t.get_preferences())
 
-post = input("Enter your post: ")
+position = input("Enter your position: ")
 salary = input("Enter your salary: ")
-e = Employee(name, firstname, contact, post, salary)
+e = Employee(name, firstname, contact, position, salary)
 print(e.display())
 
 # display of dates
