@@ -66,10 +66,10 @@ while True:
         else:
             print("No site found.")
 
-    elif choice == "2":
+  elif choice == "2":
         for site in site_list:
             site.display_info()
 
-    elif choice == "3":
+  elif choice == "3":
       break
-    print("Goodbye!")
+  print("Goodbye!")
