@@ -48,19 +48,20 @@ class Reservation:
     def cancel(self) -> bool:
         """Cancels the reservation if allowed (idempotent operation)."""
         if self.__status == "Cancelled":
-            print("⚠️ This reservation is already cancelled.")
+            print(" This reservation is already cancelled.")
             return False
         self.__status = "Cancelled"
-        print(f"✅ Reservation {self.__id} successfully cancelled.")
+        print(f" Reservation {self.__id} successfully cancelled.")
         return True
     def update_payment_mode(self, new_mode: str) -> bool:
         """Updates the payment mode after creation."""
         if new_mode not in self.AUTHORIZED_PAYMENT_MODES:
-            print(f"⚠️ Invalid mode. Options: {self.AUTHORIZED_PAYMENT_MODES}")
+            print(f" Invalid mode. Options: {self.AUTHORIZED_PAYMENT_MODES}")
             return False
         self.__payment_mode = new_mode
-        print(f"✅ Payment mode updated to: {new_mode}")
+        print(f" Payment mode updated to: {new_mode}")
         return True
+        
         # ───────GETTERS (Encapsulation) ─────────
     def get_id(self) -> str: return self.__id
     def get_touriste(self): return self.__touriste
@@ -70,6 +71,24 @@ class Reservation:
     def get_total_price(self) -> float: return self.__total_price
     def get_status(self) -> str: return self.__status
     def get_payment_mode(self) -> str: return self.__payment_mode
+        
+        # ───────── DISPLAY ─────────
+    def display(self) -> str:
+        return (f" {self.__id} | "
+                f"Tourist: {self.__touriste.get_prenom()} {self.__touriste.get_nom()} | "
+                f"Accommodation: {self.__logement.get_nom()} | "
+                f"Dates: {self.__dates[0]} ➝ {self.__dates[1]} ({self.__nights} night(s)) | "
+                f"Payment: {self.__payment_mode} | "
+                f"Status: {self.__status} | "
+                f"Total: {self.__total_price:.2f} FCFA")
+
+    def __str__(self) -> str:
+        return self.display()
+
+    def __repr__(self) -> str:
+        return f"Reservation(id={self.__id}, status={self.__status})"
+
+
 
 
 
