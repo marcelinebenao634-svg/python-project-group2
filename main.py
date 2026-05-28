@@ -1,6 +1,6 @@
 from person import Person, Tourist, Employee
 from logement import Hotel, Auberge,hotels, auberges
-from touristSite import TouristSite, search_site, site_list, User, Reservation, register, make_reservation
+from touristSite import TouristSite, search_site, site_list, User, register
 from reservation import Reservation
 
 name = input("Enter your name :")
