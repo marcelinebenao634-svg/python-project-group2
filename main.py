@@ -1,4 +1,4 @@
-from person import Person, Tourist, Employee
+from personne import Person, Tourist, Employee
 from TouristSite import TouristSit, search_site, site_list, User, register
 from reservation import Reservation
 from logement import Hotel, Auberge,hotels, auberges
@@ -28,30 +28,31 @@ salary = input("Enter your salary: ")
 e = Employee(name, firstname, contact, position, salary)
 print(e.display())
 
-# display of dates
+#  dates
 arrival_date = input("Enter arrival date (YYYY-MM-DD): ")
 departure_date = input("Enter departure date (YYYY-MM-DD): ")
 
 # Mode of payment
 print("Payment modes: Cash, Credit Card, Mobile Money, Bank Transfer")
 payment_mode = input("Enter payment mode: ")
-
-# change mode of payment
+try:
+    r = Reservation(t, h, arrival_date, departure_date, payment_mode)
+    print(r.display())
+except ValueError as e:
+    print(f"Error: {e}")
+    payment_mode = input("Enter a valid payment mode: ")
+    r = Reservation(t, h, arrival_date, departure_date, payment_mode)
+    print(r.display())
 change = input("Do you want to change payment mode? (yes/no): ")
-if change =="yes":
+if change == "yes":
   new_mode = input("Enter new payment mode: ")
-r.update_payment_mode(new_mode)
+  r.update_payment_mode(new_mode)
+  print(r.display())
 
-# Créer la réservation
-r = Reservation(t, h, arrival_date, departure_date, payment_mode)
-
-# Afficher
-print(r.display())
 #annuler si besoin
 cancel = input("Do you want to cancel? (yes/no): ")
 if cancel =="yes":
   r.cancel
-
 
 # Afficher le type de logement
 print("what type of accomodation do you want?")
