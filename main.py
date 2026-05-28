@@ -50,27 +50,4 @@ if type_choix == "1":
   a.display()        
 
 
-while True:
-    print("\n=== Tourist Sites of Burkina Faso ===")
-    print("1. Search for a site")
-    print("2. Display all sites")
-    print("3. Quit")
 
-    choice = input("Your choice: ")
-
-    if choice == "1":
-        name = input("Enter the name of the site to search: ")
-        results = search_site(site_list, name)
-        if results:
-            for site in results:
-                site.display_info()
-        else:
-            print("No site found.")
-
-  elif choice == "2":
-        for site in site_list:
-            site.display_info()
-
-  elif choice == "3":
-      break
-  print("Goodbye!")
