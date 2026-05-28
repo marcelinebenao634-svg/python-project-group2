@@ -1,5 +1,4 @@
 from person import Person, Tourist, Employee
-from logement import Logement, Hotel, Auberge
 
 name = input("Enter your name :")
 firstname = input("Enter your firstname : ")
@@ -26,3 +25,25 @@ salary = input("Enter your salary: ")
 e = Employee(name, firstname, contact, post, salary)
 print(e.display())
 
+from logement import Logement, Hotel, Auberge
+print("what type of accomodation do you want?")
+print("1. Hotel")
+print("2. Auberge")
+type_choice = input("Enter your choice (1 or 2): ")
+if type_choix == "1":
+  print("Available hotels: ")
+  for i, hotel in enumerate(hotels, 1):
+    print(f"{i}. {hotel.get_name()} - {hotel.get_localisation()} - {hotel.get_cost() FCFA ")}
+  choice = int(input("Enter number: ")) - 1
+  h = hotels[choice]
+  h.display()
+
+  elif type_choix == "2":
+  print("\nAvailable auberges: ")
+  for i, hotel in enumerate(auberges, 1):
+    print(f"{i}. {auberge.get_name()} - {auberge.get_localisation()} - {auberge.get_cost() FCFA ")}
+  choice = int(input("Enter number: ")) - 1
+  a = auberges[choice]
+  a.display()        
+
+                    
