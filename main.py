@@ -50,16 +50,26 @@ elif type_choix == "2":
   a.display()
 
 
-# Saisie des dates
+# display of dates
 arrival_date = input("Enter arrival date (YYYY-MM-DD): ")
 departure_date = input("Enter departure date (YYYY-MM-DD): ")
 
-# Mode de paiement
+# Mode of payment
 print("Payment modes: Cash, Credit Card, Mobile Money, Bank Transfer")
 payment_mode = input("Enter payment mode: ")
+
+# change mode of payment
+change = input("Do you want to change payment mode? (yes/no): ")
+if = change =="yes"
+new_mode = input("Enter new payment mode: ")
+r.update_payment_mode(new_mode)
 
 # Créer la réservation
 r = Reservation(t, h, arrival_date, departure_date, payment_mode)
 
 # Afficher
 print(r.display())
+#annuler si besoin
+cancel = input("Do you want to cancel? (yes/no): ")
+if = cancel =="yes"
+r.cancel
