@@ -38,8 +38,8 @@ payment_mode = input("Enter payment mode: ")
 
 # change mode of payment
 change = input("Do you want to change payment mode? (yes/no): ")
-if = change =="yes"
-new_mode = input("Enter new payment mode: ")
+if change =="yes":
+  new_mode = input("Enter new payment mode: ")
 r.update_payment_mode(new_mode)
 
 # Créer la réservation
@@ -49,8 +49,8 @@ r = Reservation(t, h, arrival_date, departure_date, payment_mode)
 print(r.display())
 #annuler si besoin
 cancel = input("Do you want to cancel? (yes/no): ")
-if = cancel =="yes"
-r.cancel
+if cancel =="yes":
+  r.cancel
 
 
 # Afficher le type de logement
@@ -58,7 +58,7 @@ print("what type of accomodation do you want?")
 print("1. Hotel")
 print("2. Auberge")
 type_choice = input("Enter your choice (1 or 2): ")
-if type_choix == "1":
+if type_choice == "1":
   print("Available hotels: ")
   for i, hotel in enumerate(Hotel, 1):
     print(f"{i}. {Hotel.get_name()} - {Hotel.get_localisation()} - {Hotel.get_cost()} FCFA ")
@@ -66,7 +66,7 @@ if type_choix == "1":
   h = Hotel[choice]
   h.display()
 
-elif type_choix == "2":
+elif type_choice == "2":
   print("\nAvailable auberges: ")
   for i, hotel in enumerate(Auberge, 1):
     print(f"{i}. {Auberge.get_name()} - {Auberge.get_localisation()} - {Auberge.get_cost()} FCFA ")
