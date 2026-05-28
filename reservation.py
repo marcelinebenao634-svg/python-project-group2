@@ -48,19 +48,77 @@ class Reservation:
     def cancel(self) -> bool:
         """Cancels the reservation if allowed (idempotent operation)."""
         if self.__status == "Cancelled":
-            print("⚠️ This reservation is already cancelled.")
+            print(" This reservation is already cancelled.")
             return False
         self.__status = "Cancelled"
-        print(f"✅ Reservation {self.__id} successfully cancelled.")
+        print(f" Reservation {self.__id} successfully cancelled.")
         return True
     def update_payment_mode(self, new_mode: str) -> bool:
         """Updates the payment mode after creation."""
         if new_mode not in self.AUTHORIZED_PAYMENT_MODES:
-            print(f"⚠️ Invalid mode. Options: {self.AUTHORIZED_PAYMENT_MODES}")
+            print(f" Invalid mode. Options: {self.AUTHORIZED_PAYMENT_MODES}")
             return False
         self.__payment_mode = new_mode
-        print(f"✅ Payment mode updated to: {new_mode}")
+        print(f" Payment mode updated to: {new_mode}")
         return True
+        
+        # ───────GETTERS (Encapsulation) ─────────
+    def get_id(self) -> str: return self.__id
+    def get_touriste(self): return self.__touriste
+    def get_logement(self): return self.__logement
+    def get_dates(self) -> tuple: return self.__dates
+    def get_nights(self) -> int: return self.__nights
+    def get_total_price(self) -> float: return self.__total_price
+    def get_status(self) -> str: return self.__status
+    def get_payment_mode(self) -> str: return self.__payment_mode
+        
+        # ───────── DISPLAY ─────────
+    def display(self) -> str:
+        return (f" {self.__id} | "
+                f"Tourist: {self.__touriste.get_prenom()} {self.__touriste.get_nom()} | "
+                f"Accommodation: {self.__logement.get_nom()} | "
+                f"Dates: {self.__dates[0]} ➝ {self.__dates[1]} ({self.__nights} night(s)) | "
+                f"Payment: {self.__payment_mode} | "
+                f"Status: {self.__status} | "
+                f"Total: {self.__total_price:.2f} FCFA")
+
+    def __str__(self) -> str:
+        return self.display()
+
+    def __repr__(self) -> str:
+        return f"Reservation(id={self.__id}, status={self.__status})"
+
+# ───────── SERIALIZATION (Dict for file I/O) ─────────
+    def to_dict(self) -> dict:
+        """Exports reservation data to a dictionary for file saving."""
+        return {
+            "id": self.__id,
+            "tourist_nom": self.__touriste.get_nom(),
+            "tourist_prenom": self.__touriste.get_prenom(),
+            "logement_nom": self.__logement.get_nom(),
+            "arrival_date": self.__dates[0],
+            "departure_date": self.__dates[1],
+            "total_price": self.__total_price,
+            "status": self.__status,
+            "payment_mode": self.__payment_mode
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict, touriste, logement) -> "Reservation":
+        """Reconstructs a Reservation from a dictionary (file loading)."""
+        mode = data.get("payment_mode", "Mobile Money")
+        res = cls(touriste, logement, data["arrival_date"], data["departure_date"], mode)
+        res.__id = data["id"]
+        res.__status = data["status"]
+        # Sync counter to avoid ID duplication
+        num = int(data["id"].split("-")[1])
+        if num >= cls._id_counter:
+            cls._id_counter = num + 1
+        return res
+    
+
+
+
 
 
 

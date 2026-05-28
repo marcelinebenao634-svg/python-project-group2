@@ -1,5 +1,6 @@
 from person import Person, Tourist, Employee
 from logement import Logement, Hotel, Auberge
+from touristSite import TouristSite, search_site, site_list
 
 name = input("Enter your name :")
 firstname = input("Enter your firstname : ")
@@ -14,7 +15,7 @@ t.add_preference(preference)
 
 while True:
   choice = input("Do you want to add more preferences? (yes/no:) ")
-  if choice =="no"
+  if choice =="no":
     break
   preference = input("Enter  your preference: ")
   t.add_preference(preference)
@@ -26,97 +27,49 @@ salary = input("Enter your salary: ")
 e = Employee(name, firstname, contact, post, salary)
 print(e.display())
 
-name = input("Enter hotel's name : ")
-localisation = input("Enter the localisation : ")
-cost = input("Enter the cost : ")
-stars = input("Enter the number of stars : ")
-services = input("Enter the services : ")
-services_list = []
-for service in services.split(","):
-  services_list.append(service.strip())
-cost = int(cost)
-stars = int(stars)
-h = Hotel(name, localisation, cost, stars, services_list)
-h.display()
 
-name = input("Enter auberge's name : ")
-localisation = input("Enter the localisation : ")
-cost = input("Enter the cost : ")
-type_dormitory = input("Enter the type of dormitory : ")
-cost = int(cost)
-a = Auberge(name, localisation, cost, type_dormitory)
-a.display()
-from logement import Hotel, Auberge
-hotel1 = Hotel("Hotel Splendide", "OUAGADOUGOU", 50000, 4, ["Wi-Fi", "Piscine"])
-auberge1 = Auberge("Auberge Bilimpo", "Fada N'Gourma", 20000, "Mixed Dormitory")
-hotel2 = Hotel("Hotel de la Paix", "Lagos", 30000, 3, ["Wi-Fi", "Restaurant"])
-auberge2 = Auberge("Auberge du 11 Decembre", "Fada N'Gourma", 15000, "Female Dormitory")
-hotel3 = Hotel("Laico hotel", "OUAGADOUGOU", 40000, 5, ["Wi-Fi", "Piscine", "Spa"])
-auberge3 = Auberge("Auberge song taaba", "OUAGADOUGOU", 25000, "Male Dormitory")
-hotel4 = Hotel("Hotel silmende", "OUAGADOUGOU", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-auberge4 = Auberge("Auberge du LA VIDA LOCA", "OUAGADOUGOU", 18000, "Female Dormitory")
-hotel5 = Hotel("Bravia Hotel", "OUAGADOUGOU", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel6 = Hotel("Lancaster ouaga 2000", "OUAGADOUGOU", 55000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel7 = Hotel("Hotel kavana", "OUAGADOUGOU", 40000, 4, ["Wi-Fi", "Piscine"])
-hotel8 = Hotel("Bravia Hotel", "OUAGADOUGOU", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel9 = Hotel("hotel sissiman", "Bobo-Dioulasso", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel10 = Hotel("villa Bobo", "Bobo-Dioulasso", 30000, 3, ["Wi-Fi", "Piscine"])
-hotel11 = Hotel("pacific hotel", "Bobo-Dioulasso", 40000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel12 = Hotel("cascades Palace", "Banfora", 45000, 3, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel13 = Hotel("Hotel canne a sucre", "Banfora ", 30000, 3, ["Wi-Fi", "Piscine"])
-hotel14 = Hotel("Hotel du lac", "Banfora", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel15 = Hotel("campement touristique", "Dedougou", 25000, 2, ["Wi-Fi"])
-hotel16 = Hotel("Hotel Tieba", "Tenkodogo", 20000, 2, ["Wi-Fi"])
-hotel17 = Hotel("Hotel djamou", "Tenkodogo", 30000, 3, ["Wi-Fi", "Piscine"])
-hotel18 = Hotel("Hotel du kaziende", "Kaya", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel19 = Hotel("pacific hotel kaya", "Kaya", 40000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel20 = Hotel("Hotel la grace divine", "Kaya", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel1.display()
-print("\n")
-hotel2.display()
-print("\n")
-hotel3.display()
-print("\n")
-hotel4.display()
-print("\n")
-hotel5.display()
-print("\n")
-hotel3.display()
-print("\n")
-auberge3.display()
-print("\n")
-hotel4.display()
-print("\n")
-auberge4.display()
-print("\n")
-hotel5.display()
-print("\n")
-hotel6.display()
-print("\n")
-hotel7.display()
-print("\n")
-hotel8.display()
-print("\n")
-hotel9.display()
-print("\n")
-hotel10.display()
-print("\n")
-hotel11.display()
-print("\n")
-hotel12.display()
-print("\n")
-hotel13.display()
-print("\n")
-hotel14.display()
-print("\n")
-hotel15.display()
-print("\n")
-hotel16.display()
-print("\n")
-hotel17.display()
-print("\n")
-hotel18.display()
-print("\n")
-hotel19.display()
-print("\n")
-hotel20.display()
+print("what type of accomodation do you want?")
+print("1. Hotel")
+print("2. Auberge")
+type_choice = input("Enter your choice (1 or 2): ")
+if type_choix == "1":
+  print("Available hotels: ")
+  for i, hotel in enumerate(hotels, 1):
+    print(f"{i}. {hotel.get_name()} - {hotel.get_localisation()} - {hotel.get_cost() FCFA ")}
+  choice = int(input("Enter number: ")) - 1
+  h = hotels[choice]
+  h.display()
+
+  elif type_choix == "2":
+  print("\nAvailable auberges: ")
+  for i, hotel in enumerate(auberges, 1):
+    print(f"{i}. {auberge.get_name()} - {auberge.get_localisation()} - {auberge.get_cost() FCFA ")}
+  choice = int(input("Enter number: ")) - 1
+  a = auberges[choice]
+  a.display()        
+
+
+while True:
+    print("\n=== Tourist Sites of Burkina Faso ===")
+    print("1. Search for a site")
+    print("2. Display all sites")
+    print("3. Quit")
+
+    choice = input("Your choice: ")
+
+    if choice == "1":
+        name = input("Enter the name of the site to search: ")
+        results = search_site(site_list, name)
+        if results:
+            for site in results:
+                site.display_info()
+        else:
+            print("No site found.")
+
+    elif choice == "2":
+        for site in site_list:
+            site.display_info()
+
+    elif choice == "3":
+      break
+        print("Goodbye!")
