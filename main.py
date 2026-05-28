@@ -1,5 +1,5 @@
-from Person import person, tourist, employee
-from Logement import Logement, Hotel, Auberge
+from Person import Person Tourist, Employee
+from Logement import Hotel, Auberge
 from TouristSite import TouristSite, search_site, site_list
 
 name = input("Enter your name :")
@@ -72,4 +72,4 @@ while True:
 
     elif choice == "3":
       break
-        print("Goodbye!")
+    print("Goodbye!")
