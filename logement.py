@@ -1,141 +1,84 @@
-class Logement:
-    """Base class representing a tourist accomodation."""
+"""
+logement.py - Accommodation base class and subclasses (Hotel, Auberge).
+Demonstrates polymorphism via calculate_price().
+"""
 
-    def __init__(self, name, localisation, cost):
+class Accommodation:
+    """Base class for tourist accommodations."""
+    def __init__(self, name, location, base_price):
         self.__name = name
-        self.__localisation = localisation
-        self.__cost = cost
+        self.__location = location
+        self.__base_price = base_price
 
-    def get_name(self):
-        return self.__name
+    def get_name(self): return self.__name
+    def get_location(self): return self.__location
+    def get_base_price(self): return self.__base_price
 
-    def get_localisation(self):
-        return self.__localisation
-
-    def get_cost(self):
-        return self.__cost
+    def calculate_price(self, nights):
+        return self.__base_price * nights
 
     def display(self):
-        print(f"Logement: {self.__name}")
-        print(f"Localisation: {self.__localisation}")
-        print(f"Cost: {self.__cost} FCFA")
+        print(f"  {self.__name} | {self.__location} | {self.__base_price} FCFA/night")
 
 
-class Hotel(Logement):
-    """Hotel class with stars and services. 5% tax applied."""
-
-    def __init__(self, name, localisation, cost, stars, services):
-        super().__init__(name, localisation, cost)
+class Hotel(Accommodation):
+    """Hotel with star rating and services. Applies 5% tax."""
+    def __init__(self, name, location, base_price, stars, services):
+        super().__init__(name, location, base_price)
         self.__stars = stars
         self.__services = services
 
-    def get_stars(self):
-        return self.__stars
+    def get_stars(self): return self.__stars
+    def get_services(self): return self.__services
 
-    def calculate_price(self):
-        return self.get_cost() * 1.05
-
-    def display(self):
-        print("Hotel Information:")
-        super().display()
-        print(f"Stars: {self.__stars} stars")
-        print(f"Services: {', '.join(self.__services)}")
-        print(f"cost with taxe 5%: {self.calculate_price()} FCFA")
-
-
-class Auberge(Logement):
-    """Auberge class with type of dormitory. 10% discount applied."""
-
-    def __init__(self, name, localisation, cost, type_dormitory):
-        super().__init__(name, localisation, cost)
-        self.__type_dormitory = type_dormitory
-
-    def get_type_dormitory(self):
-        return self.__type_dormitory
-
-    def calculate_price(self):
-        return self.get_cost() * 0.90
+    def calculate_price(self, nights):
+        return super().calculate_price(nights) * 1.05
 
     def display(self):
-        print("\nAuberge Information:")
-        super().display()
-        print(f"Type of Dormitory: {self.__type_dormitory}")
-        print(f"cost with discount 10%: {self.calculate_price()}FCFA")
+        price = self.calculate_price(1)
+        print(f"  Hotel: {self.get_name()} ({self.__stars} stars) | {self.get_location()} | {price:.0f} FCFA/night | Services: {', '.join(self.__services)}")
 
 
-hotel1 = Hotel("Hotel Splendide", "OUAGADOUGOU", 50000, 4, ["Wi-Fi", "Piscine"])
-auberge1 = Auberge("Auberge Bilimpo", "Fada N'Gourma", 20000, "Mixed Dormitory")
-hotel2 = Hotel("Hotel de la Paix", "Lagos", 30000, 3, ["Wi-Fi", "Restaurant"])
-auberge2 = Auberge("Auberge du 11 Decembre", "Fada N'Gourma", 15000, "Female Dormitory")
-hotel3 = Hotel("Laico hotel", "OUAGADOUGOU", 40000, 5, ["Wi-Fi", "Piscine", "Spa"])
-auberge3 = Auberge("Auberge song taaba", "OUAGADOUGOU", 25000, "Male Dormitory")
-hotel4 = Hotel("Hotel silmende", "OUAGADOUGOU", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-auberge4 = Auberge("Auberge du LA VIDA LOCA", "OUAGADOUGOU", 18000, "Female Dormitory")
-hotel5 = Hotel("Bravia Hotel", "OUAGADOUGOU", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel6 = Hotel("Lancaster ouaga 2000", "OUAGADOUGOU", 55000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel7 = Hotel("Hotel kavana", "OUAGADOUGOU", 40000, 4, ["Wi-Fi", "Piscine"])
-hotel8 = Hotel("Bravia Hotel", "OUAGADOUGOU", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel9 = Hotel("hotel sissiman", "Bobo-Dioulasso", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel10 = Hotel("villa Bobo", "Bobo-Dioulasso", 30000, 3, ["Wi-Fi", "Piscine"])
-hotel11 = Hotel("pacific hotel", "Bobo-Dioulasso", 40000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel12 = Hotel("cascades Palace", "Banfora", 45000, 3, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotel13 = Hotel("Hotel canne a sucre", "Banfora ", 30000, 3, ["Wi-Fi", "Piscine"])
-hotel14 = Hotel("Hotel du lac", "Banfora", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel15 = Hotel("campement touristique", "Dedougou", 25000, 2, ["Wi-Fi"])
-hotel16 = Hotel("Hotel Tieba", "Tenkodogo", 20000, 2, ["Wi-Fi"])
-hotel17 = Hotel("Hotel djamou", "Tenkodogo", 30000, 3, ["Wi-Fi", "Piscine"])
-hotel18 = Hotel("Hotel du kaziende", "Kaya", 35000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel19 = Hotel("pacific hotel kaya", "Kaya", 40000, 4, ["Wi-Fi", "Piscine", "Restaurant"])
-hotel20 = Hotel("Hotel la grace divine", "Kaya", 45000, 5, ["Wi-Fi", "Piscine", "Spa", "Restaurant"])
-hotels = [hotel1, hotel2, hotel3, hotel4, hotel5, hotel6, hotel7, hotel8, hotel9, hotel10, hotel11, hotel12, hotel13, hotel14, hotel15, hotel16, hotel17, hotel18, hotel19, hotel20]
-auberges = [auberge1, auberge2, auberge3, auberge4] 
-if __name__ == "__main__":       
-    hotel1.display()
-    print("\n")
-    hotel2.display()
-    print("\n")
-    hotel3.display()
-    print("\n")
-    hotel4.display()
-    print("\n")
-    hotel5.display()
-    print("\n")
-    hotel3.display()
-    print("\n")
-    auberge3.display()
-    print("\n")
-    hotel4.display()
-    print("\n")
-    auberge4.display()
-    print("\n")
-    hotel5.display()
-    print("\n")
-    hotel6.display()
-    print("\n")
-    hotel7.display()
-    print("\n")
-    hotel8.display()
-    print("\n")
-    hotel9.display()
-    print("\n")
-    hotel10.display()
-    print("\n")
-    hotel11.display()
-    print("\n")
-    hotel12.display()
-    print("\n")
-    hotel13.display()
-    print("\n")
-    hotel14.display()
-    print("\n")
-    hotel15.display()
-    print("\n")
-    hotel16.display()
-    print("\n")
-    hotel17.display()
-    print("\n")
-    hotel18.display()
-    print("\n")
-    hotel19.display()
-    print("\n")
-    hotel20.display()
+class Auberge(Accommodation):
+    """Auberge with dormitory type. Applies 10% discount."""
+    def __init__(self, name, location, base_price, dorm_type):
+        super().__init__(name, location, base_price)
+        self.__dorm_type = dorm_type
+
+    def get_dorm_type(self): return self.__dorm_type
+
+    def calculate_price(self, nights):
+        return super().calculate_price(nights) * 0.90
+
+    def display(self):
+        price = self.calculate_price(1)
+        print(f"  Auberge: {self.get_name()} | {self.get_location()} | {price:.0f} FCFA/night | Dorm: {self.__dorm_type}")
+
+
+# Accommodation Database mapped to regions
+ACCOMMODATION_DB = [
+    Hotel("Memorial Hotel", "Ouagadougou", 45000, 4, ["Wi-Fi", "Pool", "Restaurant"]),
+    Hotel("Bravia Hotel", "Ouagadougou", 40000, 4, ["Wi-Fi", "Conference Rooms"]),
+    Auberge("Auberge Song Taaba", "Ouagadougou", 20000, "Mixed Dorm"),
+    Hotel("Hotel Sissiman", "Bobo-Dioulasso", 35000, 4, ["Wi-Fi", "Pool", "Gym"]),
+    Hotel("Villa Bobo", "Bobo-Dioulasso", 30000, 3, ["Wi-Fi", "Breakfast"]),
+    Auberge("Auberge Bilimpo", "Bobo-Dioulasso", 18000, "Female Dorm"),
+    Hotel("Cascades Palace", "Banfora", 35000, 4, ["Wi-Fi", "Pool", "Restaurant"]),
+    Hotel("Hotel Calypso", "Banfora", 30000, 3, ["Wi-Fi", "AC Bungalows"]),
+    Auberge("Auberge de la Falaise", "Banfora", 15000, "Mixed Dorm"),
+    Hotel("Splendide Hotel", "Koudougou", 30000, 4, ["Wi-Fi", "Pool"]),
+    Auberge("Auberge Plateau Central", "Koudougou", 15000, "Female Dorm"),
+    Hotel("Hotel Dunia", "Ouahigouya", 25000, 3, ["Wi-Fi", "Restaurant"]),
+    Auberge("Auberge du Nord", "Ouahigouya", 18000, "Mixed Dorm"),
+    Hotel("Hotel Kazienide", "Kaya", 25000, 3, ["Wi-Fi", "24h Reception"]),
+    Hotel("Pacific Hotel Kaya", "Kaya", 30000, 3, ["Wi-Fi", "Restaurant"]),
+    Auberge("Auberge du Centre", "Kaya", 12000, "Male Dorm"),
+    Hotel("Zind Naaba Hotel", "Dedougou", 25000, 4, ["Wi-Fi", "Pool"]),
+    Auberge("Campement Touristique", "Dedougou", 15000, "Mixed Dorm"),
+    Hotel("Panache Hotel", "Fada N'Gourma", 28000, 3, ["Wi-Fi", "Hot Water", "AC"]),
+    Auberge("Auberge du 11 Decembre", "Fada N'Gourma", 18000, "Mixed Dorm"),
+    Hotel("Eco-Touristic Oasis", "Tenkodogo", 25000, 4, ["Wi-Fi", "Private Bath"]),
+    Auberge("Auberge Poko et Raogo", "Tenkodogo", 15000, "Female Dorm"),
+    Hotel("Gaoua Lodge", "Gaoua", 22000, 3, ["Wi-Fi", "Breakfast"]),
+    Auberge("Auberge du Sud", "Gaoua", 14000, "Mixed Dorm")
+]
