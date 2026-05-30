@@ -160,13 +160,23 @@ Team members for collaboration and code review
 Open-source community for best practices
 Qwen studio
 Claude
-##  Team Roles & Responsibilities (Group 2)
-* *Member 1:* Client profile management (classes/personne.py)
-* *Member 2:* Accommodation management (classes/logement.py)
-* *Member 3:* Directory of attractions (classes/site_touristique.py)
-* *Member 4:* Cost calculation logic and ticketing (classes/reservation.py)
-* *Member 5:* Data catalog and main entry point (classes/fichiers.py & main.py)
-* *Member 6:* Technical documentation (README.md)
+
+
+
+
+participation 
+
+Ephraim Bationo: Client profile management (personne.py`)
+ BiHOUN Nadège: Accommodation management (logement.py`)
+ BILA Ursula: Directory of attractions (`classes/site_touristique.py`)
+ BAZIE Grâce: Cost calculation logic and ticketing (reservation.py`)
+BENAO Marcelline: Data catalog and main entry point (main.py)
+BINGBOURE Edith : Readme,Technical documentation
+
+All members participe at the realisation of PowerPoint and the project
+
+
+
 
 Members links
 
@@ -177,11 +187,10 @@ Members links
 -(https://github.com/sidnomwendeedithbingboure)
 -(https://github.com/samoumiennadegebihoun8)
 
-Ephraim Bationo: Client profile management (personne.py`)
- BiHOUN Nadège: Accommodation management (logement.py`)
- BILA Ursula: Directory of attractions (`classes/site_touristique.py`)
- BAZIE Grâce: Cost calculation logic and ticketing (reservation.py`)
-BENAO Marcelline: Data catalog and main entry point (main.py)
-BINGBOURE Edith : Readme,Technical documentation
 
-All members participe at the realisation of PowerPoint and the project
+
+
+
+
+
+
