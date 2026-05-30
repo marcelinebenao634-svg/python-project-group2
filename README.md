@@ -1,25 +1,25 @@
-# AfriTour - Tourism Management System
+AfriTour - Tourism Management System
 
-## 1. Project Title and Description
+1. Project Title and Description
 
-**AfriTour** is a Python-based tourism management system designed to promote tourist destinations in Burkina Faso. The application simulates a travel agency platform with two distinct user roles:
+AfriTour is a Python-based tourism management system designed to promote tourist destinations in Burkina Faso. The application simulates a travel agency platform with two distinct user roles:
 
-- **Tourist**: Can browse tourist sites, specify travel preferences, search for accommodations by region, and make reservations with automatic price calculation and receipt generation.
-- **Employee**: Has access to a management dashboard to view system statistics, update site security levels, modify accommodation prices, and search the database.
+- Tourist: Can browse tourist sites, specify travel preferences, search for accommodations by region, and make reservations with automatic price calculation and receipt generation.
+- Employee: Has access to a management dashboard to view system statistics, update site security levels, modify accommodation prices, and search the database.
 
 The system features intelligent site sorting based on user preferences, geographic filtering for accommodations, and demonstrates core Object-Oriented Programming principles including inheritance, encapsulation, and polymorphism.
 
----
 
-## 2. How to Run the Project
 
-### Prerequisites
-- **Python Version**: Python 3.6 or higher
-- **Required Modules**: None (uses only Python standard library)
+2. How to Run the Project
 
-### Installation and Execution Steps
+ Prerequisites
+- Python Version: Python 3.6 or higher
+- vscode python extension 
 
- **Clone or download the repository**:
+Installation and Execution Steps
+
+ 
    ```bash
    git clone <repository-url>
    cd afriTour*
@@ -58,8 +58,7 @@ Search sites by keyword across name, category, and description
 4. Technologies Used
 
 Programming Language: Python 3.6+
-Libraries: Python Standard Library only
-datetime - for date validation and calculations
+Libraries: Python Standard Library 
 Development Environment: VS Code / Terminal
 Version Control: Git & GitHub
 
