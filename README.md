@@ -19,8 +19,6 @@ The system features intelligent site sorting based on user preferences, geograph
 
 Installation and Execution Steps
 
- 
-   ```bash
    git clone <repository-url>
    cd afriTour*
 Follow the on-screen instructions:
