@@ -168,7 +168,7 @@ Claude
 * *Member 5:* Data catalog and main entry point (classes/fichiers.py & main.py)
 * *Member 6:* Technical documentation (README.md)
 
-## Members links
+Members links
 
 -(https://github.com/ephraimbationo19-lgtm)
 -(https://github.com/Ursula60)
@@ -176,3 +176,12 @@ Claude
 -(https://github.com/marcelinebenao634-svg)
 -(https://github.com/sidnomwendeedithbingboure)
 -(https://github.com/samoumiennadegebihoun8)
+
+Ephraim Bationo: Client profile management (personne.py`)
+ BiHOUN Nadège: Accommodation management (logement.py`)
+ BILA Ursula: Directory of attractions (`classes/site_touristique.py`)
+ BAZIE Grâce: Cost calculation logic and ticketing (reservation.py`)
+BENAO Marcelline: Data catalog and main entry point (main.py)
+BINGBOURE Edith : Readme,Technical documentation
+
+All members participe at the realisation of PowerPoint and the project
