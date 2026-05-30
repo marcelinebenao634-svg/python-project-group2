@@ -161,7 +161,7 @@ Open-source community for best practices
 Qwen studio
 Claude 
 
-Team Members links
+Members links
 
 https://github.com/ephraimbationo19-lgtm
 
