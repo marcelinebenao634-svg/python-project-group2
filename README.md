@@ -159,9 +159,7 @@ Professor and teaching assistants for guidance
 Team members for collaboration and code review
 Open-source community for best practices
 Qwen studio
-Claude 
-
-Members links
+Claude
 
 ## Members links
 
