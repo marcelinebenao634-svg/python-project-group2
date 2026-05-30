@@ -20,7 +20,7 @@ The system features intelligent site sorting based on user preferences, geograph
 Installation and Execution Steps
 
    git clone <repository-url>
-   cd afriTour*
+   cd afriTour
 Follow the on-screen instructions:
 Enter your personal information
 Specify your role (Tourist or Employee)
@@ -105,8 +105,22 @@ Accommodation (Base Class)
 Purpose: Represents any tourist lodging
 Attributes: name, location, base_price
 Main Methods:
-get_name(), get_location(), get_base_price()
-calculate_price(nights) - base calculation
-display() - shows accommodation info
-Hotel (Inherits from Accommodation)
-Purpose: Represents a hotel with stars and services
+
+Members contribution
+
+Ephraim Bationo: Client profile management (personne.py`)
+ BiHOUN Nadège: Accommodation management (logement.py`)
+ BILA Ursula: Directory of attractions (classes/site_touristique.py)
+ BAZIE Grâce: Cost calculation logic and ticketing (reservation.py`)
+BENAO Marcelline: Data catalog and main entry point (main.py)
+BINGBOURE Edith : Readme,Technical documentation
+
+All members participe at the realisation of PowerPoint and the project
+
+Members links
+- [ephraimbationo19-lgtm](https://github.com/ephraimbationo19-lgtm)
+- [Ursula60](https://github.com/Ursula60)
+- [baziegracepelagie](https://github.com/baziegracepelagie)
+- [marcelinebenao634-svg](https://github.com/marcelinebenao634-svg)
+- [sidnomwendeedithbingboure](https://github.com/sidnomwendeedithbingboure)
+- [samoumiennadegebihoun8](https://github.com/samoumiennadegebihoun8)
