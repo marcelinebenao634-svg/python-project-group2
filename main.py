@@ -27,6 +27,17 @@ def employee_dashboard(user):
     print(f"Welcome, Agent {user.get_first_name()} {user.get_last_name()}")
     print(f"Position: {user.get_position()} | Contact: {user.get_contact()}")
     print("=" * 50)
+# Company secret password configuration
+    COMPANY_PASSWORD = "@fri_1Go"
+    
+    # --- WHILE LOOP UNTIL THE PASSWORD IS CORRECT ---
+    password_input = input("Please enter the company password to continue: ").strip()
+    
+    while password_input != COMPANY_PASSWORD:
+        print("Incorrect password. Access denied. Try again.")
+        password_input = input("Please enter the company password to continue: ").strip()
+        
+    print("Access granted!\n" + "=" * 50)
     while True:
         print("\nManagement Menu:")
         print("1. View all sites & security levels")
