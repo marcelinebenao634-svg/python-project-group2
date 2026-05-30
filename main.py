@@ -1,6 +1,6 @@
 """
 main.py - Entry point for the AfriTour system.
-Handles user routing, site selection, accommodation booking, and receipt generation.
+Handles user routing, site selection, accommodation booking, and receipt generation future.
 """
 from personne import Tourist, Employee
 from logement import Hotel, Auberge, ACCOMMODATION_DB
