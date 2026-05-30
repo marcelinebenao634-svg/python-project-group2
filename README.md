@@ -5,12 +5,12 @@ A Python project simulating a travel agency dedicated to Burkina Faso. The syste
 
 
 ## Team Roles & Responsibilities (Group 2)
-* *Member 1:* Client profile management (classes/personne.py)
-* *Member 2:* Accommodation management (classes/logement.py)
-* *Member 3:* Directory of attractions (classes/site_touristique.py)
-* *Member 4:* Cost calculation logic and ticketing (classes/reservation.py)
-* *Member 5:* Main entry point (main.py)
-* *Member 6:* Technical documentation (README.md)
+* *Bationo Ephraïm:* Client profile management (classes/personne.py)
+* *Bihoun samoumien nadege:* Accommodation management (classes/logement.py)
+* * Billa Ursula:* Directory of attractions (classes/site_touristique.py)
+* *BAzie Grâce Pélagie:* Cost calculation logic and ticketing (classes/reservation.py)
+* *Benao Marceline:* Main entry point (main.py)
+* *Bingboure sidnomwende Edith:* Technical documentation (README.md)
 
 
 ## Features
