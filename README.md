@@ -160,6 +160,13 @@ Team members for collaboration and code review
 Open-source community for best practices
 Qwen studio
 Claude
+##  Team Roles & Responsibilities (Group 2)
+* *Member 1:* Client profile management (classes/personne.py)
+* *Member 2:* Accommodation management (classes/logement.py)
+* *Member 3:* Directory of attractions (classes/site_touristique.py)
+* *Member 4:* Cost calculation logic and ticketing (classes/reservation.py)
+* *Member 5:* Data catalog and main entry point (classes/fichiers.py & main.py)
+* *Member 6:* Technical documentation (README.md)
 
 ## Members links
 
