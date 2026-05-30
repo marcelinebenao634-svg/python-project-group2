@@ -1,3 +1,4 @@
+
 # AfriTour - Tourism Management System
 
 A Python project simulating a travel agency dedicated to Burkina Faso. The system offers two distinct workflows: the **tourist** (trip planning) and the **employee** (data consultation and management).
@@ -47,6 +48,7 @@ https://github.com/baby-66-pela
 
 https://github.com/marcelinebenao634-svg
 
+https://github.com/edith-dev-ai
 
 
 
