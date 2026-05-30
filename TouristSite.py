@@ -1,6 +1,11 @@
+"""
+TouristSite.py - Site management, categorization, and security filtering.
+Contains the full database of 25 Burkina Faso sites.
+"""
+
 class TouristSite:
     """Represents a tourist destination with detailed information."""
-    def _init_(self, name, category, description, tips, address, hours, national_price, foreign_price, rating):
+    def __init__(self, name, category, description, tips, address, hours, national_price, foreign_price, rating):
         self.__name = name
         self.__category = category
         self.__description = description
@@ -12,10 +17,10 @@ class TouristSite:
         self.__rating = rating
         
         # AUTOMATIC LOGIC FOR COMPATIBILITY WITH main.py
-        # Extracts the city/region from the address for hotel filtering
+        # Extracts the city/region from the address for accommodation filtering
         self.__region = self._extract_region(address)
         # Determines the security level based on the region
-        self._security = self._assign_security(self._region)
+        self.__security = self._assign_security(self.__region)
 
     def _extract_region(self, address):
         """Extracts the key city from the address to filter accommodations."""
@@ -29,7 +34,7 @@ class TouristSite:
         if "dedougou" in address_lower: return "Dedougou"
         if "po" in address_lower: return "Po"
         if "gorom" in address_lower: return "Gorom-Gorom"
-        # Fallback: take the first word before the comma
+        # Fallback: takes the first word before the comma
         return address.split(",")[0].strip()
 
     def _assign_security(self, region):
@@ -38,7 +43,7 @@ class TouristSite:
         medium_sec = ["Gaoua", "Dedougou", "Kaya", "Tenkodogo"]
         if region in high_sec: return "High"
         if region in medium_sec: return "Medium"
-        return "Low"  # Remote areas or border zones
+        return "Low"  # Remote or border areas
 
     # ───────── GETTERS ─────────
     def get_name(self): return self.__name
@@ -67,7 +72,7 @@ class TouristSite:
         print(f"  Rating: {self.__rating} / 10\n")
 
 
-# ───────── FULL DATABASE (25 SITES) ─────────
+# ───────── COMPLETE DATABASE (25 SITES) ─────────
 SITE_DATABASE = [
     # ── Nature ────────────────────────────────
     # 1.
@@ -273,7 +278,6 @@ def display_sites_by_category():
     return site_map
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     # Quick test: display the list
     display_sites_by_category()
-
