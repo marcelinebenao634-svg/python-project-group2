@@ -163,9 +163,9 @@ Claude
 
 ## Members links
 
--[ephraimbationo19-lgtm](https://github.com/ephraimbationo19-lgtm)
--[Ursula60](https://github.com/Ursula60)
--[baziegracepelagie](https://github.com/baziegracepelagie)
--[marcelinebenao634-svg](https://github.com/marcelinebenao634-svg)
--[sidnomwendeedithbingboure](https://github.com/sidnomwendeedithbingboure)
--[samoumiennadegebihoun8](https://github.com/samoumiennadegebihoun8)
+-(https://github.com/ephraimbationo19-lgtm)
+-(https://github.com/Ursula60)
+-(https://github.com/baziegracepelagie)
+-(https://github.com/marcelinebenao634-svg)
+-(https://github.com/sidnomwendeedithbingboure)
+-(https://github.com/samoumiennadegebihoun8)
