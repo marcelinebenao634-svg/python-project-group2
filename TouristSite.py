@@ -273,7 +273,7 @@ def display_sites_by_category():
     return site_map
 
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     # Quick test: display the list
     display_sites_by_category()
 
