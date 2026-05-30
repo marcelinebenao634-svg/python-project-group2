@@ -21,7 +21,7 @@ A Python project simulating a travel agency dedicated to Burkina Faso. The syste
 - **Employee Dashboard**: System statistics, keyword search, and real-time updates (site security levels, accommodation prices).
 - **OOP Architecture**: Inheritance, strict encapsulation, and polymorphism for price calculation.
   
-- ## ⚙️ How to Run the Project
+- ##  How to Run the Project
 1. Make sure you have Python 3 installed on your machine.
 2. Open a terminal in the root directory of the project (mon_projet/).
 3. Run the following command:
