@@ -62,14 +62,14 @@ Version Control: Git & GitHub
 
 5. Project Structure
 
-afriTour/
-│
-├── main.py                
-├── personne.py             
-├── logement.py             
-├── TouristSite.py          
-├── reservation.py          
-└── README.md 
+afriTour
+
+── main.py                
+── personne.py             
+── TouristSite.py             
+── logement.py          
+── reservation.py          
+── README.md 
              
 File Descriptions
 main.py: Application entry point. Handles user input, role-based routing, menu display, and coordinates the booking workflow. Contains the employee dashboard interface.
